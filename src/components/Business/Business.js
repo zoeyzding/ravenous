@@ -19,7 +19,7 @@ class Business extends React.Component {
     return (
       <div className='Business'>
         <div className='image-container'>
-          <img src={business.imageSrc} alt='pizza' />
+          <img className='image-container' src={business.imageSrc} alt='' />
         </div>
         <h2>{business.name}</h2>
         <div className='Business-information'>
@@ -27,7 +27,7 @@ class Business extends React.Component {
             <p>{business.address}</p>
             <p>{business.city}</p>
             <p>
-              `${business.state} ${business.zipCode}`
+              {business.state} {business.zipCode}
             </p>
           </div>
           <div className='Business-reviews'>

@@ -3,7 +3,7 @@ import "./BusinessList.css";
 
 import Business from "../Business/Business";
 
-class BusinessList extends Component {
+class BusinessList extends React.Component {
   state = {};
   render() {
     return (
