@@ -15,6 +15,16 @@ function renderSortByOptions() {
 }
 
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    // Don't call this.setState() here!
+    this.state = {
+      term: "",
+      location: "",
+      sortBy: "best_match",
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
   state = {};
 
   render() {
