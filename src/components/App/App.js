@@ -1,30 +1,34 @@
-// eslint-disable-next-line
-import logo from "../../logo.svg";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
-import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import BusinessList from "../BusinessList/BusinessList";
+import BusinessList from '../BusinessList/BusinessList';
+import SearchBar from '../SearchBar/SearchBar';
 
 const business = {
-  imageSrc: "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
-  name: "MarginOtto Pizzeria",
-  address: "1010 Paddington Way",
-  city: "Flavortown",
-  state: "NY",
-  zipCode: "10101",
-  category: "Italian",
+  imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
+  name: 'MarginOtto Pizzeria',
+  address: '1010 Paddington Way',
+  city: 'Bordertown',
+  state: 'NY',
+  zipCode: '10101',
+  category: 'Italian',
   rating: 4.5,
-  reviewCount: 90,
+  reviewCount: 90
 };
 
-const businesses = [business, business, business, business, business, business];
+const businesses = [
+  business,
+  business,
+  business,
+  business,
+  business,
+  business
+];
 
 class App extends React.Component {
-  state = {};
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
         <BusinessList businesses={businesses} />
