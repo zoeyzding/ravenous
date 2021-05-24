@@ -2,8 +2,8 @@ import React from "react";
 import "./SearchBar.css";
 
 class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(sortByOption) {
+    super(sortByOption);
 
     this.state = {
       term: "",
@@ -26,13 +26,29 @@ class SearchBar extends React.Component {
   }
 
   handleSortByChange(sortByOption) {
-    console.log("11111");
+    this.setState = { sortBy: sortByOption };
+  }
+
+  handleTermChange(event) {
+    this.setState = {};
+  }
+
+  handleLocationChange(event) {
+    this.setState = {};
   }
 
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map((sortByOption) => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return (
+        <li
+          className={this.getSortByClass(sortByOptionValue)}
+          key={sortByOptionValue}
+          onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
+        >
+          {sortByOption}
+        </li>
+      );
     });
   }
 
@@ -47,7 +63,7 @@ class SearchBar extends React.Component {
           <input placeholder='Where?' />
         </div>
         <div className='SearchBar-submit'>
-          <a>Let's Go</a>
+          <a href='www.baidu.com'>Let's Go</a>
         </div>
       </div>
     );
