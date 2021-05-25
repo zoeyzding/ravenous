@@ -30,17 +30,6 @@ class SearchBar extends React.Component {
   }
 
   handleSortByChange(sortByOption) {
-<<<<<<< HEAD
-    this.setState = { sortBy: sortByOption };
-  }
-
-  handleTermChange(event) {
-    this.setState = {};
-  }
-
-  handleLocationChange(event) {
-    this.setState = {};
-=======
     this.setState({ sortBy: sortByOption });
   }
 
@@ -57,25 +46,24 @@ class SearchBar extends React.Component {
   }
 
   handleSearch(event) {
-    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    this.props.searchYelp(
+      this.state.term,
+      this.state.location,
+      this.state.sortBy
+    );
     event.preventDefault();
->>>>>>> 7f823e0d24ef39565d8c217f02683f1d28af9706
   }
 
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map((sortByOption) => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
       return (
-<<<<<<< HEAD
         <li
           className={this.getSortByClass(sortByOptionValue)}
-          key={sortByOptionValue}
           onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
+          key={sortByOptionValue}
         >
-=======
-        <li className={this.getSortByClass(sortByOptionValue)} onClick={this.handleSortByChange.bind(this, sortByOptionValue)} key={sortByOptionValue}>
           {" "}
->>>>>>> 7f823e0d24ef39565d8c217f02683f1d28af9706
           {sortByOption}
         </li>
       );
@@ -89,18 +77,17 @@ class SearchBar extends React.Component {
           <ul>{this.renderSortByOptions()}</ul>
         </div>
         <div className='SearchBar-fields'>
-          <input onChange={this.handleTermChange} placeholder='Search Businesses' />
+          <input
+            onChange={this.handleTermChange}
+            placeholder='Search Businesses'
+          />
           <input onChange={this.handleLocationChange} placeholder='Where?' />
         </div>
         <div className='SearchBar-submit'>
-<<<<<<< HEAD
-          <a href='www.baidu.com'>Let's Go</a>
-=======
-          <a href='' onClick={this.handleSearch}>
+          <a href='www.baidu.com' onClick={this.handleSearch}>
             {" "}
             Let's Go
           </a>
->>>>>>> 7f823e0d24ef39565d8c217f02683f1d28af9706
         </div>
       </div>
     );
